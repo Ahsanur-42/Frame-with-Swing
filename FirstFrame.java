@@ -63,7 +63,7 @@ public class FirstFrame extends JFrame {
 	 */
 	public FirstFrame() {
 		getContentPane().setBackground(new Color(230, 230, 250));
-		setTitle("Simple Calculator");
+		setTitle("Simple Calculator by Ahsanur-42");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
