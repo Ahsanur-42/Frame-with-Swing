@@ -63,7 +63,7 @@ public class FirstFrame extends JFrame {
 	 */
 	public FirstFrame() {
 		getContentPane().setBackground(new Color(230, 230, 250));
-		setTitle("Simple Calculator by Ahsanur-42");
+		setTitle("Simple Calculator");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
@@ -79,6 +79,7 @@ public class FirstFrame extends JFrame {
 		num11.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Enter 1st Number:");
+		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setBounds(12, 13, 116, 16);
 		getContentPane().add(lblNewLabel);
 		
@@ -87,20 +88,15 @@ public class FirstFrame extends JFrame {
 		getContentPane().add(num22);
 		num22.setColumns(10);
 		
-		JLabel lblEnterndNumber = new JLabel("Enter 2nd Number:");
-		lblEnterndNumber.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblEnterndNumber.setBounds(304, 13, 116, 16);
-		getContentPane().add(lblEnterndNumber);
-		
 		JButton textSUM = new JButton("Sum");
 		textSUM.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int num1,num2,ans;
+				Float num1,num2,ans;
 				try{
-					num1= Integer.parseInt(num11.getText());
-					num2= Integer.parseInt(num22.getText());
+					num1= Float.parseFloat(num11.getText());
+					num2= Float.parseFloat(num22.getText());
 					ans= num1+num2;
-					TotalResult.setText(Integer.toString(ans));
+					TotalResult.setText(Float.toString(ans));
 				}catch (Exception ex){
 					System.out.println(ex);
 				}
@@ -112,12 +108,12 @@ public class FirstFrame extends JFrame {
 		JButton btnSub = new JButton("Sub");
 		btnSub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int num1,num2,ans;
+				Float num1,num2,ans;
 				try{
-					num1= Integer.parseInt(num11.getText());
-					num2= Integer.parseInt(num22.getText());
+					num1= Float.parseFloat(num11.getText());
+					num2= Float.parseFloat(num22.getText());
 					ans= num1-num2;
-					TotalResult.setText(Integer.toString(ans));
+					TotalResult.setText(Float.toString(ans));
 				}catch (Exception ex){
 					System.out.println(ex);
 				}
@@ -129,12 +125,12 @@ public class FirstFrame extends JFrame {
 		JButton btnMulti = new JButton("Multi");
 		btnMulti.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int num1,num2,ans;
+				Float num1,num2,ans;
 				try{
-					num1= Integer.parseInt(num11.getText());
-					num2= Integer.parseInt(num22.getText());
+					num1= Float.parseFloat(num11.getText());
+					num2= Float.parseFloat(num22.getText());
 					ans= num1*num2;
-					TotalResult.setText(Integer.toString(ans));
+					TotalResult.setText(Float.toString(ans));
 				}catch (Exception ex){
 					System.out.println(ex);
 				}
@@ -146,12 +142,12 @@ public class FirstFrame extends JFrame {
 		JButton btnNewButton_1 = new JButton("Div");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int num1,num2,ans;
+				Float num1,num2,ans;
 				try{
-					num1= Integer.parseInt(num11.getText());
-					num2= Integer.parseInt(num22.getText());
+					num1= Float.parseFloat(num11.getText());
+					num2= Float.parseFloat(num22.getText());
 					ans= num1/num2;
-					TotalResult.setText(Integer.toString(ans));
+					TotalResult.setText(Float.toString(ans));
 				}catch (Exception ex){
 					System.out.println(ex);
 				}
@@ -172,6 +168,11 @@ public class FirstFrame extends JFrame {
 		TotalResult.setBounds(12, 157, 116, 22);
 		getContentPane().add(TotalResult);
 		TotalResult.setColumns(10);
+		
+		JLabel lblEnterndNumber = new JLabel("Enter 2nd Number:");
+		lblEnterndNumber.setForeground(Color.BLACK);
+		lblEnterndNumber.setBounds(304, 13, 116, 16);
+		getContentPane().add(lblEnterndNumber);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
